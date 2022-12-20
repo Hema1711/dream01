@@ -1,29 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Home page</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/header-footer.css" />
-	
-	 <!-- Bootstrap core CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <link rel="stylesheet" href="css/footer.css">
-   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-
-    
-	
-</head>
-<body>
- 
     <div class="container">
 
         <div class="main-body">
@@ -35,7 +9,7 @@
                   <li class="breadcrumb-item active" aria-current="page">User Profile</li>
                 </ol>
               </nav>
-              <!-- /Breadcrumb -->
+              <!-- Breadcrumb -->
         
               <div class="row gutters-sm">
                 <div class="col-md-4 mb-3">
@@ -44,7 +18,7 @@
                       <div class="d-flex flex-column align-items-center text-center">
                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                         <div class="mt-3">
-                          <h4>Surya</h4>
+                          <h4><%= @user_index.first_name %></h4>
                           <p class="text-secondary mb-1">User</p>
                           <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
                         </div>
@@ -53,7 +27,8 @@
                             <ul class="list-group list-group-flush">
                              
                               <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
+                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter mr-2 icon-inline text-info">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>Twitter</h6>
                                 <span class="text-secondary">@dream_covers</span>
                               </li>
                               <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -61,8 +36,11 @@
                                 <span class="text-secondary">dream covers</span>
                               </li>
                               <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                                <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
+                                 <h6 class="mb-0"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook mr-2 icon-inline text-primary"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>Facebook</h6>
                                 <span class="text-secondary">dream covers</span>
+                              </li>
+                              <li>
+                              <%= button_to 'Logout', '/auth/logout',class:"btn btn-secondary btn-index", method: :get, data:{turbo: "false"} %>
                               </li>
                             </ul>
                           </div>
@@ -79,7 +57,7 @@
                           <h6 class="mb-0">Full Name</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          Surya Velmayil
+                          <%= @user_index.first_name%> <%= @user_index.last_name%> 
                         </div>
                       </div>
                       <hr>
@@ -88,7 +66,7 @@
                           <h6 class="mb-0">Email</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          surya@gmail.com
+                          <%= @user_index.email%>
                         </div>
                       </div>
                       <hr>
@@ -97,16 +75,7 @@
                           <h6 class="mb-0">Phone</h6>
                         </div>
                         <div class="col-sm-9 text-secondary">
-                          (239) 816-9029
-                        </div>
-                      </div>
-                      <hr>
-                      <div class="row">
-                        <div class="col-sm-3">
-                          <h6 class="mb-0">Mobile</h6>
-                        </div>
-                        <div class="col-sm-9 text-secondary">
-                          (320) 380-4539
+                         <%= @user_index.phone_number%>
                         </div>
                       </div>
                       <hr>
@@ -121,8 +90,7 @@
                       <hr>
                       <div class="row">
                         <div class="col-sm-12">
-                          <a href="/users/edit_user" class="btn btn-info " target="__blank" href="#">Edit</a>
-                          <%= button_to 'Logout', '/auth/logout',class:"btn btn-secondary", method: :get, data:{turbo: "false"} %>
+                          <a href="/users/edit_user/<%=@user_index.id%>" class="index-anch btn-info btn">Edit</a>
                         </div>
                       </div>
                     </div>
@@ -132,6 +100,3 @@
             </div>
         </div>
         </div>
-
-</body>
-</html>

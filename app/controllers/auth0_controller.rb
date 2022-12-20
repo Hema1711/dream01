@@ -1,11 +1,16 @@
 # ./app/controllers/auth0_controller.rb
 class Auth0Controller < ApplicationController
+  $session_user=""
   def callback
     # OmniAuth stores the information returned from Auth0 and the IdP in request.env['omniauth.auth'].
     # In this code, you will pull the raw_info supplied from the id_token and assign it to the session.
     # Refer to https://github.com/auth0/omniauth-auth0/blob/master/EXAMPLES.md#example-of-the-resulting-authentication-hash for complete information on 'omniauth.auth' contents.
+
     auth_info = request.env['omniauth.auth']
     session[:userinfo] = auth_info['extra']['raw_info']
+
+    $session_user = session[:userinfo].name
+    current_user= ProductInformation::UserService.create_user($session_user)
 
     # Redirect to the URL you want after successful auth
     redirect_to '/users/get_user'
@@ -17,9 +22,10 @@ class Auth0Controller < ApplicationController
   end
 
   def logout
+    # byebug
     reset_session
     redirect_to logout_url, allow_other_host: true
-    end
+  end
 
   private
 

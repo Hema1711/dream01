@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_121446) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -31,11 +31,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_121446) do
     t.string "flat_no"
     t.string "house_name"
     t.string "street_name"
-    t.integer "city_id"
-    t.integer "district_id"
-    t.integer "state_id"
-    t.integer "country_id"
     t.integer "pincode"
+    t.string "city_id"
+    t.string "district_id"
+    t.string "country_id"
+    t.string "state_id"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -71,13 +71,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_121446) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "product_id"
     t.integer "total_items"
     t.integer "sub_total"
     t.integer "total_unique_items"
     t.boolean "available_discounts"
     t.string "currency"
     t.integer "user_id"
+    t.integer "product_cart_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -209,6 +209,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_121446) do
     t.string "product_image"
     t.integer "price"
     t.integer "quantity"
+    t.integer "product_cart_id"
   end
 
   create_table "return_logs", force: :cascade do |t|
@@ -239,8 +240,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_121446) do
   end
 
   create_table "user_addresses", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "address_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -255,6 +254,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_121446) do
     t.integer "phone_number"
     t.string "file_extension"
     t.string "language"
+    t.string "address_id"
   end
 
 end

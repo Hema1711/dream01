@@ -380,7 +380,7 @@ ul {
 }
 
 .single_product {
-    padding: 30px 50px;
+    padding: 90px 50px;
 }
 
 .image_list li {
@@ -657,7 +657,7 @@ ul {
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 0.4px;
-	text-decoration: none;
+
 	transition: all 0.5s;
 	box-shadow: none;
 	border: none;
@@ -673,7 +673,8 @@ ul {
 	font-weight: 400;
 	margin-left: 4px;
 	transition: all 0.5s;
-    text-decoration: none;
+  
+
 }
 .right-content .down-content span a:hover {
 	color: #3a8bcd;
@@ -731,29 +732,13 @@ ul {
 	text-transform: uppercase;
 	font-weight: 300;
 	letter-spacing: 0.4px;
-	text-decoration: none;
+
 	transition: all 0.5s;
 }
 .main-button a:hover {
 	opacity: 0.7;
 }
-/* }
-.section-heading {
-    margin-top: 79px;
-    margin-bottom: -12px;
-}
-.section-heading .line-dec {
-	width: 30px;
-	height: 5px;
-	background-color: #3a8bcd;
-}
-.section-heading h1 {
-	font-size: 22px;
-	font-weight: 700;
-	color: #1e1e1e;
-	margin-top: 15px;
-    padding: 20px 0px;
-} */
+
 
 .owl-carousel .owl-item img {
     display: block;
@@ -908,7 +893,7 @@ ul {
 }
 .featured .featured-item {
 	margin-bottom: 30px;
-	text-decoration: none;
+
 }
 .featured .featured-item h4 {
 	transition: all 0.5s;
@@ -983,16 +968,16 @@ body{
 }
 
 nav ol .breadcrumb-item a{
-text-decoration: none;
+
 }
 .main-body {
     padding: 15px;
 }
-.card-user {
+.card-user-product {
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
-.card-user {
+.card-user-product {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1006,15 +991,15 @@ text-decoration: none;
 
 }
 
-.card-body {
+.card-body-product {
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
-    height: 463px;
+    height: 406px;
 }
 
-.card-user {
-    margin-bottom: 30px;
+.card-user-product {
+    margin: 156px -300px 41px 100px;
     border: none;
     border-radius: 5px;
     box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
@@ -1141,7 +1126,7 @@ text-decoration: none;
     margin-top: 5px;
     cursor: pointer;
     margin-left: 290px;
-    text-decoration: none;
+
 }
 
 .container-delivery form .submit-btn:hover{
@@ -1203,4 +1188,41 @@ text-decoration: none;
     .form-image{
         padding-top: 30px;
     }
+    .product-form{
+        margin-top: 90px
+    }
     /* ===============================Form ends======================================= */
+
+    /* ===============================Product Form Starts===================== */
+    .box-class-product{
+        width: 78%;
+        float: left;
+        padding: 2%;
+        border: 1px solid gray; 
+        border-radius: 5px;
+        background-color: #f0f7f6;
+    } 
+
+
+   
+
+    a.product-edit-anch{
+        text-decoration:none;
+        color: #eee;
+        margin-left: 270px;
+        margin-top: -73px;
+    }
+    
+    a.product-edit-anch:hover{
+        color: #fff;
+    }
+    
+    a.product-edit-anch{
+        text-decoration: none;
+        color: #eee;
+    }
+    
+    a.product-edit-anch:hover{
+        color: var(--orange);
+    }
+    /* ===============================Product Form Ends===================== */

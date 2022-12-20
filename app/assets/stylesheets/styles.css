@@ -15,10 +15,12 @@
     margin:0; padding:0;
     box-sizing: border-box;
     outline: none; border:none;
-    text-decoration: none;
+
     text-transform: capitalize;
     transition: all .2s linear;
+    text-decoration: none;
 }
+
 
 html{
     font-size: 62.5%;
@@ -41,6 +43,7 @@ section{
     padding-bottom: 3rem;
     font-size: 3.5rem;
     color:black;
+    margin-top: 68px;
 }
 
 .heading span{
@@ -54,20 +57,59 @@ section{
 .btn-index{
     margin-top: 1rem;
     display: inline-block;
-    padding:.8rem 3rem;
-    font-size: 1.7rem;
-    border-radius: .5rem;
-    color:rgb(255, 255, 255);
+    padding: 1.8rem 2rem;
+    font-size: 1.9rem;
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     background: black;
 }
+   
+a.index-anch{
+    text-decoration:none;
+    color: #eee;
+}
 
+.index-anch:hover{
+    color: #fff;
+}
 
-.btn-index:hover{
-    background: grey;
+a.index-anch-single{
+    text-decoration: none;
+    color: #eee;
+}
+
+a.index-anch-single:hover{
+    color: var(--orange);
+}
+
+.btn-login-header{
+    height: 4.5rem;
+    width: 8rem;
+    line-height: 2.5rem;
+    border-radius: 0.5rem;
+    background: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    margin-left: 0.1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-login-header:hover{
+    background:#ff7800;
     color:#fff;
 }
 
+.form {
+    float: right;
+    margin-right: 17px;
+    margin-top: -45px;
+}
+
+div.icons{
+    width: 202px;
+}
 .header{
     position: fixed;
     top:0; left:0; right: 0;
@@ -140,13 +182,13 @@ body a{
 }
 
 .header .search-form.active{
-    right:2rem;
+    right: -102rem;
     transition: .4s linear;
 }
 
 .header .search-form input{
     height:100%;
-    width:100%;
+    width:30%;
     background: none;
     text-transform: none;
     font-size: 1.6rem;
@@ -778,18 +820,20 @@ body a{
     margin: 0 0 1rem 0;
 }
 .account-settings .user-profile .user-avatar img {
-    width: 90px;
-    height: 90px;
+    width: 250px;
+    height: 250px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
+    margin-top: 27px;
 }
 .account-settings .user-profile h5.user-name {
     margin: 0 0 0.5rem 0;
+    font-size: x-large;
 }
 .account-settings .user-profile h6.user-email {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: larger;
     font-weight: 400;
     color: #9fa8b9;
 }
@@ -1228,3 +1272,50 @@ body a{
     padding:1rem 0;
 }
 /* =========================Product index Ends=============================================== */
+
+/* =====================Cart Page Starts============================== */
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
+
+.cart-page-fonts{
+font-size: larger;
+}
+
+
+
+.cart_page-card{
+    margin: -24px 10px;
+}
+.cart_page_payment{
+    margin: 30px 10px;
+}
+
+.cart_page_header_title{
+    font-size: x-large;
+}
+/* =====================Cart Page Ends============================== */
+/* ========================Contact Starts=========================== */
+
+.card-contact{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin-top: 26px; 
+}
+
+.card-body-contact {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+    height: 463px;
+}
+/* ========================Contact Ends============================= */
