@@ -17,6 +17,15 @@ module ProductInformation
             # byebug
             # data = Product.create(params)
         end
+
+        # def self.create_cart(cart_params)
+        #     byebug
+        #     @cart_data = Cart.new(cart_params)
+        #     if @cart_data.total_items.present?
+        #         CartMailer.with(cart: @cart_data).missing_product_email.deliver_now
+        #         puts "you have some products in the cart"
+        #     end
+        # end
         
 	end
 end
