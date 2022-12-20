@@ -25,11 +25,15 @@ class CartsController < ApplicationController
         user_detail = ProductInformation::CartService.cart_index($session_user)
 
         @cart = Cart.new(product_id: product_detail.id,currency: product_detail.price,user_id: user_detail.id )
-
         if @cart.save
             redirect_to cart_index_path
         end
     end
+
+    # def create_cart
+    #     @data = ProductInformation::CartService.create_cart(cart_params)
+    #     head :no_content
+    # end
  
 
     def cart_param
