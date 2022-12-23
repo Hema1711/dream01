@@ -1,0 +1,65 @@
+
+    
+    <label class="amount">
+      <span>Amount: $5</span>
+    </label>
+
+    <section class="products" id="products">
+
+    <h1 class="heading"> our <span>products</span> </h1>
+
+    <div class="swiper product-slider swiper-initialized swiper-horizontal swiper-pointer-events">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide box swiper-slide-duplicate"style="width: 393px; margin-right: 20px;">
+                <img src="/assets/bed-sheet-2.jpg" alt="">
+                <h3>King Size</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <%= button_to "View more", product_index_path, :method => :get,  class:"btn-index index-anch" %>
+            </div>
+
+             <div class="swiper-slide box swiper-slide-duplicate"style="width: 393px; margin-right: 20px;">
+                <img src="/assets/bed-sheet-3.jpg" alt="">
+                <h3>Queen Size</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <%= button_to "View more", product_index_path, :method => :get,  class:"btn-index index-anch" %>
+            </div>
+
+           <div class="swiper-slide box swiper-slide-duplicate"style="width: 393px; margin-right: 20px;">
+                <img src="/assets/bed-sheet-6.jpg" alt="">
+                <h3>Kid Size</h3>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                  <%= button_to "View more", product_index_path, :method => :get,  class:"btn-index index-anch" %>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto"></script>

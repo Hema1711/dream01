@@ -59,6 +59,9 @@ Rails.application.routes.draw do
      
      delete "carts/delete_cart", to:  "carts#delete_cart"
 
+     # resources :carts, only: [:new_pay, :create_pay]
+     get "carts/new_pay", to: "carts#new_pay", as: :new_pay
+     get "carts/create_pay", to: "carts#create_pay"
   #---------------------------------------Payment----------------------------------------------------------
    get "/payments/get_payment", to: "payments#payment_index", as: :payment_index
    

@@ -109,12 +109,18 @@
                   <p class="mb-2" style="font-size: larger;">$26.48</p>
                 </div>
 
-                <button type="button" class="btn btn-primary btn-block btn-lg">
+                <!-- <button type="button" class="btn btn-primary btn-block btn-lg">
                   <div class="d-flex justify-content-between">
                     <span style="font-size: larger;">Checkout</span>
-                    <span style="font-size: larger;">$26.48</span>
-                  </div>
-                </button>
+                    <span style="font-size: larger;">$26.48</span> -->
+
+                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto"></script>
+
+                  <!-- </div> -->
+                <!-- </button> -->
 
               </div>
             </div>
