@@ -115,6 +115,10 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     dry-core (1.0.0)
       concurrent-ruby (~> 1.0)
       zeitwerk (~> 2.6)
@@ -341,6 +345,7 @@ GEM
     ssrf_filter (1.1.1)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    stripe (8.0.0)
     temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.11)
@@ -382,6 +387,7 @@ DEPENDENCIES
   carrierwave
   debug
   devise (~> 4.8)
+  dotenv-rails
   faker (~> 3.0)
   grape
   importmap-rails
@@ -399,6 +405,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  stripe
   turbo-rails
   tzinfo-data
   web-console

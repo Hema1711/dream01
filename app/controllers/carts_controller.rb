@@ -34,6 +34,21 @@ class CartsController < ApplicationController
         
     end
 
+    def new_pay
+    end
+
+    def create_pay
+        @amount = 500
+
+        customer = Stripe::Customer.create(email: params[:stripeEmail], source: params[:stripeToken])
+        charge = Stripe::Charge.create(customer: customer.id, amount: @amount, description: 'Rails Stripe customer', currency: 'usd')
+
+        rescue Stripe::CardError => e
+        flash[:error] = e.message
+        # redirect_to new_pay_cart_path
+        redirect_to order_confirmation_path
+    end
+
 
 
 
