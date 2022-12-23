@@ -10,11 +10,13 @@ body [
               .account-settings
                 .user-profile
                   .user-avatar
-                    img.rounded-circle[src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin"]
+                    img.rounded-circle[src= @user_info.file_extension alt="User Profile"]
                   h5.user-name
-                      = @user_info.first_name
+                      = @user_info.first_name =@user_info.last_name 
                   h6.user-email
                        = @user_info.email
+                  h6.user-email
+                       = @user_info.country
                 
         .col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12
           .card-user.h-100
@@ -34,7 +36,7 @@ body [
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="phone"]  Phone Number
-                    = form.number_field :phone_number, class:"box-class", placeholder:"Enter Phone Number", id:"phone", data: {"user-target" => "phone_number" , action: "focusout->user#phone_validation" }
+                    = form.text_field :phone_number, class:"box-class", placeholder:"Enter Phone Number", id:"phone", data: {"user-target" => "phone_number" , action: "focusout->user#phone_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                  .form-group
                     label.lable-class[for="email"]  Email
@@ -45,16 +47,16 @@ body [
                     | Address
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
-                    label.lable-class[for="file"] State
-                    = form.text_field :state_id, class:"box-class", placeholder:"Enter State", id:"state", data: {"user-target" => "state" , action: "focusout->user#state_validation" }
-                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
-                  .form-group
-                    label.lable-class[for="file"]  City
-                    = form.text_field :city_village_id, class:"box-class", placeholder:"Enter City", id:"city", data: {"user-target" => "city" , action: "focusout->user#city_validation" }
-                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
-                  .form-group
                     label.lable-class[for="file"] Country
-                    = form.text_field :country_id, class:"box-class", placeholder:"Enter Country", id:"country", data: {"user-target" => "country" , action: "focusout->user#country_validation" }
+                    = form.select :country, @countries, {prompt: '---Select a Country---'} , class:"box-class dropdown-toggle", id:"country", data: {"user-target" => "country" , action: "click->user#country_validation" }
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                  .form-group
+                    label.lable-class[for="file"]  State
+                    = form.select :state,  @states , {prompt:'---Select a State---'} , class:"box-class dropdown-toggle",  id:"state", data: {"user-target" => "state" , action: "click->user#state_validation" }
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                  .form-group
+                    label.lable-class[for="file"] City
+                    = form.select :city,  @cities , {prompt: '---Select a City---'}, class:"box-class dropdown-toggle", id:"city", data: {"user-target" => "city" , action: "click->user#city_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="file"]  Zip Code

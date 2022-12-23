@@ -80,56 +80,62 @@
 
     </div>
 
-    <div class="swiper product-slider">
-
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide box swiper-slide-duplicate"style="width: 393px; margin-right: 20px;">
-                <img src="/assets/bed-sheet-7.jpg" alt="">
-                <h3>Big Size</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                  <%= button_to "View more", product_index_path, :method => :get,  class:"btn-index index-anch" %>
-            </div>
-
-           <div class="swiper-slide box swiper-slide-duplicate"style="width: 393px; margin-right: 20px;">
-                <img src="/assets/bed-sheet-1.jpg" alt="">
-                <h3>Medium Size</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                  <%= button_to "View more", product_index_path, :method => :get,  class:"btn-index index-anch" %>
-            </div>
-
-          <div class="swiper-slide box swiper-slide-duplicate"style="width: 393px; margin-right: 20px;">
-                <img src="/assets/bed-sheet-6.jpg" alt="">
-                <h3>Small Size</h3>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                 <%= button_to "View more", product_index_path, :method => :get,  class:"btn-index index-anch" %>
-            </div>
-
-
-        </div>
-
-    </div>
-
-
 </section>
+<section class="deal" id="deal">
+    
+    <h1 class="heading"> <span> best deals </span> </h1>
+    
+    <div class="box-container">
+    
+        <div class="box">
+            <img src="/assets/bed-sheet-1.jpg" alt="">
+            <div class="content">
+                <h3>latest bedsheet</h3>
+                <p>upto 25% off on first purchase</p>
+                <%= button_to "explore", product_index_path, :method => :get,  class:"btn-index index-anch" %>
+            </div>
+        </div>
+    
+        <div class="box">
+            <img src="/assets/bed-sheet-5.jpg" alt="">
+            <div class="content">
+                <h3>new bedsheet</h3>
+                <p>upto 25% off on first purchase</p>
+                <%= button_to "explore", product_index_path, :method => :get,  class:"btn-index index-anch" %>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="icons-container">
+    
+        <div class="icons">
+            <i class="fas fa-shipping-fast"></i>
+            <h3>fast delivery</h3>
+            <p>Everything at your doorstep</p>
+        </div>
+    
+        <div class="icons">
+            <i class="fas fa-user-clock"></i>
+            <h3>24 x 7 support</h3>
+            <p>The sole reason we are in business is to make life less difficult for our clients</p>
+        </div>
+    
+        <div class="icons">
+            <i class="fas fa-money-check-alt"></i>
+            <h3>easy payments</h3>
+            <p>Success is one thing you can't pay for. You buy it on the installment plan and make payments everyday</p>
+        </div>
+    
+        <div class="icons">
+            <i class="fas fa-box"></i>
+            <h3>7 days replacements</h3>
+            <p>Patch the uniform and let the galaxy form a comfortable replacement</p>
+        </div>
+    
+    </div>
+    
+    </section>
 
 <!-- products section ends -->
 

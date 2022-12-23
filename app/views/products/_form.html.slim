@@ -1,5 +1,5 @@
 
- =form_with  scope: product, method: :method,class:"product-form", url: path do |form|
+ =form_with  scope: product, method: :method, class: "product-form", url: path do |form|
  
      .col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12
           .card-user-product.h-100
@@ -8,35 +8,56 @@
                 .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-12
                   h6.mb-2.text-primary
                     | Product Details
-                .col-xl-6.col-lg-6.col-md-6.col-12
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="name"]  Product Name
-                    = form.text_field :product_name, class:"box-class-product", placeholder:"Enter Product Name", id:"first_name", data: {"user-target" => "first_name" , action: "focusout->user#first_name_validation" }
+                    = form.text_field :product_name, class:"box-class-product-t", placeholder:"Enter Product Name", id:"name", data: {"user-target" => "name" , action: "focusout->user#product_name_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="code"] Product Code
-                    = form.text_field :product_code, class:"box-class-product", placeholder:"Enter Product Code", id:"last_name", data: {"user-target" => "last_name" , action: "focusout->user#last_name_validation" }
+                    = form.text_field :product_code, class:"box-class-product-t", placeholder:"Enter Product Code", id:"code", data: {"user-target" => "code" , action: "focusout->user#code_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="color"]  Product Color
-                    = form.text_field :product_color, class:"box-class-product", placeholder:"Enter Product color",  id:"phone", data: {"user-target" => "phone_number" , action: "focusout->user#phone_validation" }
+                    = form.text_field :product_color, class:"box-class-product-t", placeholder:"Enter Product color",  id:"Color", data: {"user-target" => "color" , action: "focusout->user#color_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                  .form-group
                     label.lable-class[for="price"]  Product Price
-                    = form.text_field :price, class:"box-class-product", placeholder:"Enter  Product Price", id:"email", data: {"hello-target" => "email" , action: "focusout->user#email_validation" }
+                    = form.text_field :product_price, class:"box-class-product-t", placeholder:"Enter  Product Price", id:"price", data: {"user-target" => "price" , action: "focusout->user#price_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="desc"] Product Description
-                    = form.text_area  :product_description, class:"box-class-product",placeholder:"Enter Product Description", id:"state", data: {"user-target" => "state" , action: "focusout->user#state_validation" }
+                    = form.text_area  :product_description, class:"box-class-product",placeholder:"Enter Product Description", id:"description", data: {"user-target" => "description" , action: "focusout->user#state_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
-                    label.lable-class[for="image"]  Image
-                    = form.file_field :product_image, class:"box-class-product", placeholder:"Add File ", id:"file"
+                    label.lable-class[for="image"]  Image 1
+                    = form.file_field :product_image1, class:"box-class-product", placeholder:"Add File ", id:"file"
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                    .form-group
+                      label.lable-class[for="image"]  Image 2
+                      = form.file_field :product_image2, class:"box-class-product", placeholder:"Add File ", id:"file"
+              
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                    .form-group
+                      label.lable-class[for="image"]  Image 3
+                      = form.file_field :product_image3, class:"box-class-product", placeholder:"Add File ", id:"file"
+
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                    .form-group
+                      label.lable-class[for="image"]  Image 4
+                      = form.file_field :product_image4, class:"box-class-product", placeholder:"Add File ", id:"file"
+                
+                .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                    .form-group
+                      label.lable-class[for="image"]  Image 5
+                      = form.file_field :product_image5, class:"box-class-product", placeholder:"Add File ", id:"file"
+              
+              
               .row.gutters
                 .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-12
                   .text-right
                     .right_align
-                        = form.submit class:'create btn btn-outline-success' , data: {action: 'click-> user#create_user'}
+                        = form.submit class:'create btn btn-outline-success'
                     .right_align
                       button.btn.btn-outline-dark
-                        a.hyper href="/users/get_user"  Cancel 
+                        a.hyper href="/product/product_index"  Cancel 

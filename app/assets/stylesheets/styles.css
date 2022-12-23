@@ -10,6 +10,8 @@
     --outline-hover:.2rem solid var(--black);
 }
 
+@media (max-width: 767.98px) { .border-sm-start-none { border-left: none !important; } }
+
 *{
     font-family: 'Poppins', sans-serif;
     margin:0; padding:0;
@@ -81,6 +83,11 @@ a.index-anch-single{
 
 a.index-anch-single:hover{
     color: var(--orange);
+}
+
+a.index-anch-new-arrival{
+    text-decoration:none;
+    color: #eee;
 }
 
 .btn-login-header{
@@ -756,16 +763,15 @@ body a{
 
 
 .dream-logo-header{
-    width: 42px;
+    width: 150px;
     float: left;
     margin-top: 5px;
 }
 
 .dream-logo-footer{
-    width: 58px;
-    height: 43px;
-    float: left;
-    margin-top: 5px;
+    width: 216px;
+    /* height: 86px; */
+    margin: 40px 0;
 }
 
 .header-title{
@@ -933,7 +939,7 @@ body a{
     border:.1rem solid rgba(0,0,0,.3);
     overflow: hidden;
     position: relative;
-    margin:1rem 2rem;
+    margin: 2.5rem 1rem;
 }
 
 .arrival .box-container .box .image{
@@ -949,9 +955,10 @@ body a{
 }
 
 .arrival .box-container .box .info h3{
-    padding:1rem;
-    font-size: 2rem;
-    color:black;
+    padding: 1rem 0;
+    font-size: 1.8rem;
+    color: black;
+    margin-right: 180px;
 }
 
 .arrival .box-container .box .info .subInfo{
@@ -964,18 +971,18 @@ body a{
 
 .arrival .box-container .box .info .subInfo .price{
     color:#ff3300;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 .arrival .box-container .box .info .subInfo .price span{
     color:#666;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-decoration: line-through;
 }
 
 .arrival .box-container .box .info .subInfo .stars i{
     color:orange;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .arrival .box-container .box .overlay{
