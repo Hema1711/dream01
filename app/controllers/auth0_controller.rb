@@ -10,7 +10,8 @@ class Auth0Controller < ApplicationController
     session[:userinfo] = auth_info['extra']['raw_info']
 
     $session_user = session[:userinfo].name
-    current_user= ProductInformation::UserService.create_user($session_user)
+    unique_id = SecureRandom.alphanumeric(20)
+    current_user= ProductInformation::UserService.create_user(unique_id,$session_user)
 
     # Redirect to the URL you want after successful auth
     redirect_to '/users/get_user'

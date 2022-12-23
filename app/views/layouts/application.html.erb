@@ -30,7 +30,9 @@
  
   <header class="header" data-controller="hello">
 
-    <a href="/landing_page" class="logo header-title index-anch"> <img class="dream-logo-header" src="/assets/logo.png" alt=""></i> Dream Covers </a>
+    <a href="/landing_page" class=" header-title index-anch"> 
+        <img class="dream-logo-header" src="/assets/dream_logo.png" alt="">
+    </a>
 
     <nav class="navbar-header">
         <a class="index-anch" href="/landing_page">home</a>
@@ -50,7 +52,9 @@
               <%= link_to "", user_index_path, :method => :get,  class:"fas fa-user user_btn-link" %> 
             </div> 
            
- <%= button_to 'Logout', '/auth/logout',class:"btn btn-secondary btn-index", method: :get, data:{turbo: "false"} %>  
+
+ <%= button_to 'Logout', '/auth/logout',class:"btn btn-secondary btn-index", method: :get, data:{turbo: "false"} %>   
+
 
         <% else %>
             <div class="fas fa-search" id="search-btn" data-action="click->hello#search_box"></div>
@@ -116,8 +120,7 @@
     <div class="box-container">
 
         <div class="box">
-            <h3> Dream Covers <img class="dream-logo-footer" src="/assets/logo.png" alt="">     </h3>
-            <p>Your Comfort is Our Happiness</p>
+            <img class="dream-logo-footer" src="/assets/dream_logo.png" alt=""> 
             <div class="share">
                 <a href="#" class="fab fa-facebook-f index-anch"></a>
                 <a href="#" class="fab fa-twitter index-anch"></a>

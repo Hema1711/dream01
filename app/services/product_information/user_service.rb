@@ -10,28 +10,38 @@ module ProductInformation
 			return user_info
 		end
 
-		def self.edit_user(user_id)
-			 byebug
-			user_details = User.select(:id).includes(:address)
-		
-			
+		def self.edit_user(unique_id)
+			# byebug
+			user_details = User.find_by(unique_id: unique_id)
+
 		end
 
-		def self.update_user(id,params)
+		def self.update_user(unique_id,params)
 			# byebug
-			user = User.find(id)
+			user = User.find_by(unique_id: unique_id)
 			user.update(params)
 			
 		end
 
 
-		def self.create_user(email_id)
-			user_info = User.new(email: email_id)
+		def self.create_user(unique_id,email_id)
+			# byebug
+			user_info = User.new(unique_id:unique_id,email: email_id)
 			if (user_info.save)
 				return user_info
 			end
 
 		end
+
+
+		def self.get_states_by_country_id(country)
+			@states = CS.states(country).invert
+        end
+
+     
+        def self.get_cities_by_state_id(state)
+            @cities =CS.cities(state, :us)
+        end
 
 		def self.delete_user(user_id)
 			data = User.find(user_id)

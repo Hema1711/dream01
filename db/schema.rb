@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -32,10 +32,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
     t.string "house_name"
     t.string "street_name"
     t.integer "pincode"
-    t.string "city_id"
-    t.string "district_id"
-    t.string "country_id"
-    t.string "state_id"
+    t.string "city"
+    t.string "country"
+    t.string "state"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -71,13 +70,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total_items"
-    t.integer "sub_total"
-    t.integer "total_unique_items"
-    t.boolean "available_discounts"
-    t.string "currency"
-    t.integer "user_id"
-    t.integer "product_cart_id"
+    t.string "product_unique_id"
+    t.string "user_unique_id"
+    t.string "cart_unique_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -95,6 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
     t.integer "delivery_partner_id"
     t.integer "delivery_status_id"
     t.integer "cancellation_id"
+    t.string "delivery_unique_id"
   end
 
   create_table "delivery_logs", force: :cascade do |t|
@@ -149,11 +145,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.integer "total"
-    t.integer "cart_id"
     t.integer "payment_id"
     t.integer "quantity"
+    t.string "order_unique_id"
+    t.string "cart_unique_id"
+    t.string "user_unique_id"
   end
 
   create_table "payment_gateways", force: :cascade do |t|
@@ -186,13 +183,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "product_feedbacks", force: :cascade do |t|
-    t.integer "discount_id"
-    t.integer "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "product_stocks", force: :cascade do |t|
     t.integer "total_stock"
     t.integer "unit_price"
@@ -205,11 +195,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "product_name"
-    t.integer "product_code"
-    t.string "product_image"
-    t.integer "price"
-    t.integer "quantity"
     t.integer "product_cart_id"
+    t.string "product_description"
+    t.string "product_code"
+    t.integer "product_price"
+    t.string "product_image1"
+    t.string "product_image2"
+    t.string "product_image3"
+    t.string "product_image4"
+    t.string "product_image5"
+    t.string "product_unique_id"
   end
 
   create_table "return_logs", force: :cascade do |t|
@@ -250,11 +245,21 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_19_094942) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.integer "password"
     t.integer "phone_number"
     t.string "file_extension"
-    t.string "language"
-    t.string "address_id"
+    t.integer "address_id"
+    t.string "unique_id"
+    t.string "country"
+    t.string "state"
+    t.string "city"
+    t.integer "pincode"
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "product_unique_id"
+    t.string "user_unique_id"
   end
 
 end

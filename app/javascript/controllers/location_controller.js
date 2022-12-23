@@ -4,16 +4,15 @@ var detail = ""
 export default class extends Controller {
   connect() {
     console.log("Location JS")
-    detail = this.get_user_location()
-    this.currency_converter(detail)
+    // detail = this.get_user_location()
+    // this.currency_converter(detail)
     
   }
 
   get_user_location(){
     if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(showPosition);
-      // console.log("detail" + detail)
-      this.detail_code()
+      // this.detail_code(data)
     } else { 
       document.getElementById("demo").innerHTML =
       "Geolocation is not supported by this browser.";
@@ -30,13 +29,10 @@ export default class extends Controller {
     
       fetch (geoApiUrl)
       .then(res => res.json())
-      .then(data => {
-       
-        return data
+      .then(data => { 
+      
       })
-     
-    }
-    
+    } 
   }
   detail_code(){
     console.log("Detail")
@@ -44,20 +40,20 @@ export default class extends Controller {
 
 
 
-  currency_converter(detail){
-    console.log("Converter")
-    // console.log(location.countryCode)
-    var currency = "INR"
-    fetch(`https://api.exchangerate-api.com/v4/latest/${currency}`)
-    .then(response => {
-          return response.json();
-    })
+  // currency_converter(detail){
+  //   console.log("Converter")
+  //   // console.log(location.countryCode)
+  //   var currency = "INR"
+  //   fetch(`https://api.exchangerate-api.com/v4/latest/${currency}`)
+  //   .then(response => {
+  //         return response.json();
+  //   })
 
-    .then(data => {
-      console.log(data)
+  //   .then(data => {
+  //     console.log(data)
     
-   });
-  }
+  //  });
+  // }
 
 
    

@@ -42,16 +42,17 @@ export default class extends Controller {
     new_arrival_products_dynamic(element){ 
       return`
       <div class="box">
-            <div class="image">
-                <img src="/assets/bed-sheet-2.jpg" alt="">
+            <div class="image ">
+                <img src=${element.product_image5.url} alt="">
             </div>
             <div class="info">
-              <a class="index-anch" href="/products/single_product/${element.id}">
+              <a class="index-anch-new-arrival" href="/products/single_product/${element.product_unique_id}">
                 <h3>${element.product_name}</h3> </a>
-                <a class="product-edit-anch btn-info btn" href="/products/edit_product/${element.id}">Edit</a>
+                <a class="product-edit-anch btn-info btn" href="/products/edit_product/${element.product_unique_id}">Edit</a>
+                <a class="product-del-anch btn-danger btn" href="/products/delete_product/${element.product_unique_id}">Delete</a>
                 <div class="subInfo">
                
-                    <strong class="price"> ${element.price}/- <span>${element.price}/-</span> </strong>
+                    <strong class="price">₹${element.product_price}/- <span>${element.product_price}/-</span> </strong>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -63,8 +64,8 @@ export default class extends Controller {
                
             </div>
             <div class="overlay">
-                <a href="#" style="--i:1;" class="fas fa-heart index-anch"></a>
-                <a href="#" style="--i:2;" class="fas fa-shopping-cart index-anch"></a>
+                <a href="/carts/add_to_wishlist" style="--i:1;" class="fas fa-heart index-anch"></a>
+                <a href="/carts/create_cart/${element.product_unique_id}" style="--i:2;" class="fas fa-shopping-cart index-anch"></a>
             </div>
         </div>
       `
@@ -89,14 +90,14 @@ export default class extends Controller {
       return`
       <div class="image-container">
         <div class="big-image">
-            <img src="/assets/bed-sheet-8.jpg" alt="">
+            <img src="${data.product_image2.url}" alt="">
         </div>
 
         <div class="small-image">
-            <img class="image-active" src="/assets/bed-sheet-9.jpg" alt="">
-            <img src="/assets/bed-sheet-2.jpg" alt="">
-            <img src="/assets/bed-sheet-3.jpg" alt="">
-            <img src="/assets/bed-sheet-7.jpg" alt="">
+            <img class="image-active" src="${data.product_image3.url}" alt="">
+            <img src="${data.product_image1.url}" alt="">
+            <img src="${data.product_image3.url}" alt="">
+            <img src="${data.product_image5.url}" alt="">
         </div>
 
       </div>
@@ -113,7 +114,7 @@ export default class extends Controller {
           <span>(500+) reviews</span>
       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, at!</p>
-      <strong class="price">${data.price}<span>₹1500</span> </strong>
+      <strong class="price">₹ ${data.product_price}<span>₹1500</span> </strong>
       <a href="#"><button class="btn-index">buy now</button></a>
 
     </div>
@@ -149,12 +150,12 @@ export default class extends Controller {
       return`
       <div class="box phone">
         <div class="image">
-            <img src="/assets/bed-sheet-1.jpg" alt="">
+            <img src="${element.product_image1.url}" alt="">
         </div>
         <div class="info">
             <h3>${element.product_name}</h3>
             <div class="subInfo">
-                <strong class="price">${element.price}</strong>
+                <strong class="price">₹ ${element.product_price}</strong>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>

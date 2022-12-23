@@ -381,6 +381,7 @@ ul {
 
 .single_product {
     padding: 90px 50px;
+    margin: 55px 0;
 }
 
 .image_list li {
@@ -995,7 +996,7 @@ nav ol .breadcrumb-item a{
     flex: 1 1 auto;
     min-height: 1px;
     padding: 1rem;
-    height: 406px;
+    height: 625px;
 }
 
 .card-user-product {
@@ -1195,34 +1196,63 @@ nav ol .breadcrumb-item a{
 
     /* ===============================Product Form Starts===================== */
     .box-class-product{
-        width: 78%;
+        width: 96%;
         float: left;
         padding: 2%;
         border: 1px solid gray; 
         border-radius: 5px;
         background-color: #f0f7f6;
     } 
+    div input .input-field-box{
+       width: 97%;
+    } 
 
 
    
 
-    a.product-edit-anch{
+    a.product-del-anch{
         text-decoration:none;
         color: #eee;
-        margin-left: 270px;
-        margin-top: -73px;
+        margin-top: -189px;
+        margin-left: 261px;
     }
+    a.product-del-anch:hover{
+        color: black;
+    }
+
     
     a.product-edit-anch:hover{
-        color: #fff;
+        color: black;
     }
     
     a.product-edit-anch{
         text-decoration: none;
         color: #eee;
+        margin-top: -106px;
+        margin-left: 168px;
     }
     
-    a.product-edit-anch:hover{
-        color: var(--orange);
-    }
+
     /* ===============================Product Form Ends===================== */
+
+    /* ===================================Wishlist Starts=================== */
+    .btn-wish{
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.5rem;
+        font-size: 1.5rem;
+        border-radius: 0.5rem;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        background: rgb(61, 58, 58);
+    }
+
+    .btn-wish:hover{
+        background-color: #fff;
+        color: #FF8C00;
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+       
+  
+    /* ===================================Wishlist Ends===================== */
