@@ -1,19 +1,54 @@
 class UsersController < ApplicationController
+	
     skip_before_action :verify_authenticity_token
+
 	before_action :admin, only: [:show, :update, :destroy, :edit]
 	require 'securerandom'
+
+
+	# def create_user
+	# 	byebug
+	# 	$session_user = params[:email_id]
+	# 	unique_id = SecureRandom.alphanumeric(20)
+	# 	cart_unique_id =  SecureRandom.alphanumeric(8)
+	# 	@user_info= ProductInformation::UserService.create_user(unique_id,cart_unique_id,params[:email_id],params[:phone_number])
+	# 	redirect_to user_index_path
+	# 	# redirect_to '/users/get_user'
+
+	# end
+
+	# def verify_user
+	# 	byebug
+	# 	email_id = params[:email_id]
+	# 	password = params[:password]
+	# 	if email_id.present?
+	# 		redirect_to product_index_path
+	# 	else
+	# 		render :login_index, status: :unprocessable_entity
+	# 	end
+
+	# end
+
+
+
+
 	def user_index
 		# byebug
 		email_id = $session_user
 			@user_info = ProductInformation::UserService.get_user(email_id)
 	end
 		
+	def login_index
+	end
+
 
 	def edit_user
 		# byebug
 		@countries = CS.countries.invert
 		@states = CS.states(:us).invert
 		@cities =CS.cities(:ak, :us)
+		email_id = $session_user
+		
 		@user_info =ProductInformation::UserService.edit_user(params[:unique_id])
 	end
 
@@ -23,10 +58,7 @@ class UsersController < ApplicationController
 		redirect_to user_index_path
 	end
 
-	def create_user
-		@user_info = ProductInformation::UserService.create_user(parameters)
-		redirect_to user_index_path
-	end
+
 
 	def delete_user
 		@data=ProductInformation::UserService.delete_user(user_id)
@@ -47,7 +79,7 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :country, :city, :state, :file_extension)
+		params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :country, :city, :state, :file_extension, :cart_unique_id)
 	end
 
 end

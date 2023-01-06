@@ -1,5 +1,4 @@
 require "active_support/core_ext/integer/time"
-require 'net/smtp'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -38,7 +37,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
 
@@ -56,6 +55,7 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
+  config.action_mailer.perform_deliveries = true
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
@@ -68,49 +68,13 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  # config.action_mailer.delivery_method = :letter_opener
 
-  config.action_mailer.raise_delivery_errors = false
-  
-#   config.action_mailer.delivery_method = :smtp
-#   host = 'localhost:3000' #replace with your own url
-#   config.action_mailer.default_url_options = { host: host }
-
-#   # SMTP settings for gmail
-#   config.action_mailer.smtp_settings = {
-#   :address              => "smtp.gmail.com",
-#   :port                 => 3000,
-#   :domain               => "http://localhost:3000/orders/create_order",
-#   :user_name            => "manjusathyam842@gmail.com",
-#   :password             => "nymlooxpkggmkwwu",
-#   :authentication       => :plain,
-#   :enable_starttls_auto => true
-# }
-#   config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
-
-  ActionMailer::Base.smtp_settings = {
-  :user_name => 'Rails.application.credentials.name', # This is the string literal 'apikey', NOT the ID of your API key
-  :password => ' Rails.application.credentials.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', # This is the secret sendgrid API key which was issued during API key creation
-  :domain => 'sigmatconsultancy@gmail.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 3000,
-  :authentication => :plain,
-  :enable_starttls_auto => true
-}
-
-# config.action_mailer.delivery_method = :smtp
-#   config.action_mailer.default_url_options = { 
-#   :host => 'localhost:3000', 
-#   :protocol => 'http'
-#   }
-#   config.action_mailer.smtp_settings = {
-#   :address => 'smtp.gmail.com',
-#   :port => 3000,
-#   # :port => 465,
-#   :user_name => "dreamcover2023@gmail.com",
-#   :password => "Dreamcover@2023",
-#   # :password => "clqtmbxryouamcms",
-#   :authentication => 'plain',
-#   :enable_starttls_auto => true
-#   }
+  config.action_mailer.smtp_settings = {
+    :address => "email-smtp.us-east-2.amazonaws.com",
+    :port => 587,
+    :user_name => "AKIARSRAQOLQHOSMHUV4", #Your SMTP user
+    :password => "BLH2G4Ya52XN/3lhoayC5c7fBJZLKgncic1XyRoBSfHE", #Your SMTP password
+    :authentication => :login,
+    :enable_starttls_auto => true
+  }
 end

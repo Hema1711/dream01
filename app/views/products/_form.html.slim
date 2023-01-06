@@ -1,5 +1,5 @@
 
- =form_with  scope: product, method: :method, class: "product-form", url: path do |form|
+ =form_with  scope: product, method: method, class: "product-form", url: path do |form|
  
      .col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12
           .card-user-product.h-100
@@ -18,12 +18,12 @@
                     = form.text_field :product_code, class:"box-class-product-t", placeholder:"Enter Product Code", id:"code", data: {"user-target" => "code" , action: "focusout->user#code_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
-                    label.lable-class[for="color"]  Product Color
-                    = form.text_field :product_color, class:"box-class-product-t", placeholder:"Enter Product color",  id:"Color", data: {"user-target" => "color" , action: "focusout->user#color_validation" }
+                    label.lable-class[for="size"]  Product Size
+                    = form.text_field :product_size, class:"box-class-product-t",required: "required", placeholder:"Enter Product size",  id:"size", data: {"user-target" => "color" , action: "focusout->user#color_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                  .form-group
                     label.lable-class[for="price"]  Product Price
-                    = form.text_field :product_price, class:"box-class-product-t", placeholder:"Enter  Product Price", id:"price", data: {"user-target" => "price" , action: "focusout->user#price_validation" }
+                    = form.text_field :product_price, class:"box-class-product-t",required: "required", placeholder:"Enter  Product Price", id:"price", data: {"user-target" => "price" , action: "focusout->user#price_validation" }
                 .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
                   .form-group
                     label.lable-class[for="desc"] Product Description

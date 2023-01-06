@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
+
+
+gem 'stripe'
+gem 'dotenv-rails', :groups => [:development, :test]
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 gem 'activeadmin'
@@ -14,8 +20,6 @@ gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
-gem 'stripe'
-gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -28,6 +32,8 @@ gem 'stimulus-rails'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -55,6 +61,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
+
+gem 'city-state'
 
 # -------------------AuthO------------------------------------------------------------
 gem 'omniauth-auth0', '~> 3.0'
@@ -92,4 +100,6 @@ end
 
 gem "devise", "~> 4.8"
 
-gem "faker", "~> 3.0"
+gem 'faker'
+
+gem "pundit", "~> 2.3"

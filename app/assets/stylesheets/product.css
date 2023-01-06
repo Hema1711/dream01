@@ -26,6 +26,12 @@ div.container{
     margin-top: 100px;
 }
 
+div.container-contact{
+    max-width: 1655px;
+    margin-top: 138px;
+}
+
+
 /* ===========================Single product page======================= */
 .breadcrumb-item+.breadcrumb-item::before {    content: ">"
 }
@@ -823,7 +829,7 @@ ul {
 
 
 .login-btn :hover {
-    background: rgb(0, 0, 0);
+    background: rgb(255, 146, 44);
     color: rgb(255, 255, 255);
 }
 .cart-btn{
@@ -1122,7 +1128,7 @@ nav ol .breadcrumb-item a{
     width: 250px;
     padding: 10px;
     font-size: 17px;
-    background: rgb(0, 0, 0);
+    background: rgb(255, 146, 44);
     color: rgb(255, 255, 255);
     margin-top: 5px;
     cursor: pointer;
@@ -1131,7 +1137,7 @@ nav ol .breadcrumb-item a{
 }
 
 .container-delivery form .submit-btn:hover{
-    background: rgb(179, 179, 179);
+    background: rgb(255, 146, 44);
     color: black;
 }
 
@@ -1192,6 +1198,10 @@ nav ol .breadcrumb-item a{
     .product-form{
         margin-top: 90px
     }
+
+    .align-middle a{
+ text-decoration: none;
+    } 
     /* ===============================Form ends======================================= */
 
     /* ===============================Product Form Starts===================== */
@@ -1208,35 +1218,22 @@ nav ol .breadcrumb-item a{
     } 
 
 
-   
-
-    a.product-del-anch{
+    a.product-anch{
         text-decoration:none;
         color: #eee;
-        margin-top: -189px;
-        margin-left: 261px;
+        font-size: medium;
     }
-    a.product-del-anch:hover{
+    a.product-anch:hover{
         color: black;
     }
 
     
-    a.product-edit-anch:hover{
-        color: black;
-    }
-    
-    a.product-edit-anch{
-        text-decoration: none;
-        color: #eee;
-        margin-top: -106px;
-        margin-left: 168px;
-    }
-    
+
 
     /* ===============================Product Form Ends===================== */
 
     /* ===================================Wishlist Starts=================== */
-    .btn-wish{
+    a.btn-wish{
         margin-top: 1rem;
         display: inline-block;
         padding: 0.5rem;
@@ -1245,14 +1242,27 @@ nav ol .breadcrumb-item a{
         color: rgb(255, 255, 255);
         cursor: pointer;
         background: rgb(61, 58, 58);
+        text-decoration: none;
+        text-align: center;
     }
 
-    .btn-wish:hover{
+    a.btn-wish:hover{
         background-color: #fff;
         color: #FF8C00;
-        font-size: 2rem;
+        /* font-size: 2rem; */
         padding: 0.5rem;
     }
        
+    .product-gallery-clips{
+        margin-left: 40px;
+    }
   
+
+    .product-card-buttons{
+
+    }
+
+
+
+   
     /* ===================================Wishlist Ends===================== */

@@ -5,6 +5,21 @@ class OrdersController < ApplicationController
 		render :json =>  @data
 	end
 
+	def order_index
+		# byebug
+		user_detail = ProductInformation::CartService.cart_index($session_user)
+		order_products = Cart.find_by(cart_unique_id: user_detail.cart_unique_id)
+
+	end
+
+	def delivery_index
+		# byebug
+		user_detail = ProductInformation::CartService.cart_index($session_user)
+		order_products = Cart.find_by(cart_unique_id: user_detail.cart_unique_id)
+
+	end
+
+
 	def new_order
 		@data=ProductInformation::OrderService.new_order
 	end
@@ -30,7 +45,8 @@ class OrdersController < ApplicationController
 	private
 	
 	def order_params
-		params.require(:order).permit(:user_id, :total, :cart_id, :payment_id, :quantity)
+		# params.require(:order).permit(:user_id, :total, :cart_id, :payment_id, :quantity)
+		params.permit(:order)
 	end
 end
 

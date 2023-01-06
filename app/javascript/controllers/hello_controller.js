@@ -3,20 +3,15 @@ var load_count    =   0
 var search_text   =   ""
 export default class extends Controller {
 
-  static targets  =   ["search","email", "login","cart", "cartDetail"]
+  static targets  =   ["email", "login","cart", "cartDetail"]
 
   connect() {
-   
+    // console.log("Hello Controller")
   }
 
-  search_box(){
-    console.log("Search Box")
-    var search = document.getElementById("search-bar");
-    search.classList.toggle('active');
-  }
 
   cart_binding() {
-    console.log("URL")
+    // console.log("URL")
     window.open("/carts/cart_index/")
   }
 
@@ -63,13 +58,14 @@ export default class extends Controller {
 
 
   login_box(){
-    console.log("Login")
+    // console.log("Login")
     window.open("/users/get_user");
   }
 
   email_validation(){
-    console.log("Email")
+    // console.log("Email")
   }
+
 
 
 }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_04_071154) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -73,6 +73,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
     t.string "product_unique_id"
     t.string "user_unique_id"
     t.string "cart_unique_id"
+    t.boolean "is_active", default: true
+    t.string "product_name"
+    t.string "product_description"
+    t.integer "product_price"
+    t.string "product_image1"
+    t.integer "product_quantity", default: 1
   end
 
   create_table "categories", force: :cascade do |t|
@@ -147,7 +153,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
     t.datetime "updated_at", null: false
     t.integer "total"
     t.integer "payment_id"
-    t.integer "quantity"
     t.string "order_unique_id"
     t.string "cart_unique_id"
     t.string "user_unique_id"
@@ -195,7 +200,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "product_name"
-    t.integer "product_cart_id"
     t.string "product_description"
     t.string "product_code"
     t.integer "product_price"
@@ -205,6 +209,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
     t.string "product_image4"
     t.string "product_image5"
     t.string "product_unique_id"
+    t.boolean "is_active", default: true
+    t.string "product_size"
   end
 
   create_table "return_logs", force: :cascade do |t|
@@ -253,6 +259,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
     t.string "state"
     t.string "city"
     t.integer "pincode"
+    t.boolean "is_active", default: true
+    t.string "cart_unique_id"
+    t.boolean "is_owner", default: false
+    t.boolean "is_user", default: true
   end
 
   create_table "wishlists", force: :cascade do |t|
@@ -260,6 +270,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_23_074520) do
     t.datetime "updated_at", null: false
     t.string "product_unique_id"
     t.string "user_unique_id"
+    t.boolean "is_active", default: true
+    t.string "product_name"
+    t.string "product_description"
+    t.integer "product_price"
+    t.string "product_image1"
+    t.integer "product_quantity", default: 1
   end
 
 end

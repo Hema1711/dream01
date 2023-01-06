@@ -4,16 +4,57 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
 
   static targets=[ "first_name","email","last_name","phone_number",
-                  "state","city","country","zipcode" ]
+                  "state","city","country","zipcode", "username_sign_in", "password_sign_in", 
+                "username_sign_up" , "password_sign_up", "phonenumber_sign_up"]
 
   connect() {
     console.log("Connected! User")
     this.get_user_location()
   }
 
+  create_user(){
+    var email = this.username_sign_upTarget.value
+    var password = this.password_sign_upTarget.value
+    var phone_number = this.phonenumber_sign_upTarget.value
+    console.log("create_user")
+    console.log("email" + email)
+    console.log("password" + password)
+    console.log("phone_number" + phone_number)
+
+    fetch("/users/create_user", {
+      method:"POST",
+      body: JSON.stringify({
+          "email_id"    :   email,
+          "password"    :  password,
+          "phone_number" : phone_number 
+      }),
+
+      headers: { "content-type": "application/json; charset=UTF-8" }
+    })
 
 
-  user_detail(){
+  }
+
+  verify_user(){
+    var email = this.username_sign_inTarget.value
+    var password = this.password_sign_inTarget.valueupdate_user
+    console.log("verify_user")
+    console.log("email" + email)
+    console.log("password" + password)
+
+    fetch("/users/verify_user", {
+      method:"POST",
+      body: JSON.stringify({
+        "email_id"    :   email,
+        "password"    :  password
+      }),
+
+      headers: { "content-type": "application/json; charset=UTF-8" }
+    })
+
+  }
+
+  update_user(){
 
     email_id = document.getElementById("email")
     console.log(email_id)

@@ -26,7 +26,7 @@ module ProductInformation
 			byebug
 			@order = Order.new(order_params)
 			if @order.save
-				OrderMailer.with(order: @order).welcome_email.deliver_now
+				OrderMailer.welcome_email.deliver
 				puts "Order successfully created"
 			else
 				puts "order not created"

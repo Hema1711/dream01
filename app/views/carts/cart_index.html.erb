@@ -1,134 +1,46 @@
-<section class="h-100 h-custom" >
-  <div class="container h-100 py-5">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col ">
-
-        <div class="table-responsive cart-page-fonts cart_page-card card shadow-2-strong mb-5 mb-lg-0 " data-controller = "cart">
-          <table class="table" >
-            <thead class="">
-              <tr class="cart_page_header_title">
-                <th scope="col" >Shopping Cart</th>
-                <th scope="col">Product</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-              </tr>
-            </thead>
-            <tbody data-cart-target="cartDetail" >
-
-            </tbody>
-          </table>
-        </div>
-
-        <div class="card cart_page_payment shadow-2-strong mb-5 mb-lg-0" style="border-radius: 16px;">
-          <div class=" p-4">
-
-            <div class="row">
-              <div class="col-md-6 col-lg-4 col-xl-3 mb-4 mb-md-0">
-                <form>
-                  <div class="d-flex flex-row pb-3">
-                    <div class="d-flex align-items-center pe-2">
-                      <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1v"
-                        value="" aria-label="..." checked />
-                    </div>
-                    <div class="rounded border w-100 p-3">
-                      <p class="d-flex align-items-center mb-0">
-                        <i class="fab fa-cc-mastercard fa-2x text-dark pe-2" style="font-size: larger;"></i>Credit
-                        Card
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row pb-3">
-                    <div class="d-flex align-items-center pe-2">
-                      <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel2v"
-                        value="" aria-label="..." />
-                    </div>
-                    <div class="rounded border w-100 p-3">
-                      <p class="d-flex align-items-center mb-0">
-                        <i class="fab fa-cc-visa fa-2x fa-lg text-dark pe-2" style="font-size: larger;"></i>Debit Card
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row">
-                    <div class="d-flex align-items-center pe-2">
-                      <input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel3v"
-                        value="" aria-label="..." />
-                    </div>
-                    <div class="rounded border w-100 p-3">
-                      <p class="d-flex align-items-center mb-0">
-                        <i class="fab fa-cc-paypal fa-2x fa-lg text-dark pe-2" style="font-size: larger;"></i>PayPal
-                      </p>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="col-md-6 col-lg-4 col-xl-6">
+<div class="card-cart" data-controller = "cart">
+    <div class="row">
+        <div class="col-md-8 cart" data-cart-target="cartDetail">
+            <div class="title">
                 <div class="row">
-                  <div class="col-12 col-xl-6">
-                    <div class="form-outline mb-4 mb-xl-5">
-                      <input type="text" id="typeName" class="form-control form-control-lg" size="17"
-                        placeholder="John Smith" />
-                      <label class="form-label" for="typeName" style="font-size: larger;">Name on card</label>
-                    </div>
-
-                    <div class="form-outline mb-4 mb-xl-5">
-                      <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YY"
-                        size="7" id="exp" minlength="7" maxlength="7" />
-                      <label class="form-label" for="typeExp" style="font-size: larger;">Expiration</label>
-                    </div>
-                  </div>
-                  <div class="col-12 col-xl-6">
-                    <div class="form-outline mb-4 mb-xl-5">
-                      <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                        placeholder="1111 2222 3333 4444" minlength="19" maxlength="19" />
-                      <label class="form-label" for="typeText" style="font-size: larger;">Card Number</label>
-                    </div>
-
-                    <div class="form-outline mb-4 mb-xl-5">
-                      <input type="password" id="typeText" class="form-control form-control-lg"
-                        placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-                      <label class="form-label" for="typeText" style="font-size: larger;">Cvv</label>
-                    </div>
-                  </div>
+                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
                 </div>
-              </div>
-              <div class="col-lg-4 col-xl-3">
-                <div class="d-flex justify-content-between" style="font-weight: 500;">
-                  <p class="mb-2" style="font-size: larger;">Subtotal</p>
-                  <p class="mb-2" style="font-size: larger;">$23.49</p>
-                </div>
-
-                <div class="d-flex justify-content-between" style="font-weight: 500;">
-                  <p class="mb-0" style="font-size: larger;">Shipping</p>
-                  <p class="mb-0" style="font-size: larger;">$2.99</p>
-                </div>
-
-                <hr class="my-4">
-
-                <div class="d-flex justify-content-between mb-4" style="font-weight: 500;">
-                  <p class="mb-2"style="font-size: larger;">Total (tax included)</p>
-                  <p class="mb-2" style="font-size: larger;">$26.48</p>
-                </div>
-
-                <!-- <button type="button" class="btn btn-primary btn-block btn-lg">
-                  <div class="d-flex justify-content-between">
-                    <span style="font-size: larger;">Checkout</span>
-                    <span style="font-size: larger;">$26.48</span> -->
-
-                      <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="500"
-          data-locale="auto"></script>
-
-                  <!-- </div> -->
-                <!-- </button> -->
-
-              </div>
-            </div>
-
-          </div>
+            </div>    
+         
         </div>
-
-      </div>
+        <div class="col-md-4 summary" >
+            <div  data-cart-target = "cart_total">
+            </div>
+            <form class="stripe-form payment-btn" action="/orders/order_confirmation">
+            <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                data-email="..."
+                data-label="Payment"
+                data-panel-label="Pay {{amount}}"
+                data-amount="... " 
+                data-currency="USD"
+                data-name="..."
+                data-description="..."
+                data-image="...">
+            </script>
+            </form> 
+        </div>
+      <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
     </div>
-  </div>
-</section>
+      <div class="alert alert-warning" role="alert" data-cart-target = "cart_is_empty">
+        <h2 class="alert-heading" style="font-weight:bolder">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        Cart Is Empty!</h2>
+        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+        <hr>
+        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-outline-info btn-lg" href="/product/product_index" style="text-decoration:none" type="button">Back To Product Page</a>
+        </div>
+    </div>
+</div>
+   
+      

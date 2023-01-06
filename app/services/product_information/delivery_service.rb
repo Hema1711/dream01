@@ -9,7 +9,8 @@ module ProductInformation
 			byebug
 			@data = Delivery.new(params_del)
 			if @data.save
-				DeliveryMailer.with(data: @data).invoice_email.deliver_now
+				DeliveryMailer.invoice_email.deliver
+
 				puts "Payment Delivered Successfully"
 			end
 		end

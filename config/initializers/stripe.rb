@@ -1,12 +1,14 @@
+# Rails.configuration.stripe = {
+#   :publishable_key => "pk_test_51MJF8dSCMsqXkSzwSIxyVR9WFUsCsz7Qi9rh5tgDCF4mXRYoBBkNsj7CmHC6Zo68fEh6aCOg5hck68qvM40huMEt00YnluTa4g",
+#   :secret_key      => "sk_test_51MJF8dSCMsqXkSzwWNezaogjmUR5axcQav1YNcL9MxuA3sDtfu3rM45ksFBupyicUSMWnXL8OwkZwo6gIiAEHS2i00C50ITW9O"
+# }
+
+# Stripe.api_key = Rails.configuration.stripe[:sk_test_51MJF8dSCMsqXkSzwWNezaogjmUR5axcQav1YNcL9MxuA3sDtfu3rM45ksFBupyicUSMWnXL8OwkZwo6gIiAEHS2i00C50ITW9O]
+
+
 Rails.configuration.stripe = {
-  :publishable_key => 'pk_test_51MHLq2SIjir2ADXG97DQcuBR6CjwQYuU5Pu75W6hj2Q3ZW6LpzqDuox76sZVRzKl2xA95ktL9w7lbcLZS2lR1ftW00BSfQvMdn',
-  :secret_key      => 'sk_test_51MHLq2SIjir2ADXGTdeNZ9xxs1wSLnudB3Cua5HzAXC69ORbrgDNSoB3Ueswlboz8tkT4iV1IraF7t2pZrgK7BXh00NgwAADQd'
-}
-
-Stripe.api_key = Rails.configuration.stripe[:pk_test_51MHLq2SIjir2ADXG97DQcuBR6CjwQYuU5Pu75W6hj2Q3ZW6LpzqDuox76sZVRzKl2xA95ktL9w7lbcLZS2lR1ftW00BSfQvMdn]
-
-
-
-
-
-
+    :publishable_key => ENV['PUBLISHABLE_KEY'],
+    :secret_key      => ENV['SECRET_KEY']
+  }
+  
+  Stripe.api_key = Rails.configuration.stripe[:secret_key]

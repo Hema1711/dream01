@@ -60,7 +60,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "Dream_production"
+  # config.active_job.queue_name_prefix = "my_ses_app_production"
 
   config.action_mailer.perform_caching = false
 
@@ -90,15 +90,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.action_mailer.default_url_options = {host:'localhost:3000'}
-  config.action_mailer.smtp_settings = {
-  :address              => "smtp.gmail.com",
-  :port                 => 3000,
-  :user_name            => "manjusathyam842@gmail.com",
-  :password             => "Findme@123!",
-  :authentication       => :plain,
-  :enable_starttls_auto => true
-}
-  config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
-
 end

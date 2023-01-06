@@ -12,25 +12,22 @@ module ProductInformation
 
 		def self.edit_user(unique_id)
 			# byebug
-			user_details = User.find_by(unique_id: unique_id)
+			user_details = User.where(is_active: true).find_by(unique_id: unique_id)
 
 		end
 
 		def self.update_user(unique_id,params)
 			# byebug
-			user = User.find_by(unique_id: unique_id)
+			user = User.where(is_active: true).find_by(unique_id: unique_id)
 			user.update(params)
 			
 		end
 
 
-		def self.create_user(unique_id,email_id)
+		def self.create_user(unique_id, cart_unique_id, email_id)
 			# byebug
-			user_info = User.new(unique_id:unique_id,email: email_id)
-			if (user_info.save)
-				return user_info
-			end
-
+			user_info = User.new(unique_id:unique_id,cart_unique_id: cart_unique_id,email: email_id )
+			user_info.save
 		end
 
 

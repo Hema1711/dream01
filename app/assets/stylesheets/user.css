@@ -86,7 +86,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #6776f4;
+  background: var(--orange);
   color: #fff;
 }
 
@@ -146,7 +146,7 @@ h6 {
 }
 
 .dropdown-menu .dropdown-item:hover {
-  background-color: #f6f9ff;
+  background-color: var(--orange);
 }
 
 @media (min-width: 768px) {
@@ -428,11 +428,53 @@ h6 {
 }
 
 .user_btn{
-  margin-right: 50px;
-  float: right;
+  float: left;
+  /* margin-right:100px ; */
 }
+
+.search_btn{
+  float: left;
+  /* margin-right: 50px; */
+}
+
+.cart_btn{
+  float: left;
+  /* margin-right:150px ; */
+}
+
+
+.search_btn a.search_btn-link{
+  text-decoration: none;
+}
+.cart_btn a.cart_btn-link{
+  text-decoration: none;
+}
+
+.search_btn a.search_btn-link:hover{
+  color: #fff;
+background-color:var(--orange);
+}
+.cart_btn a.cart_btn-link:hover{
+  color: #fff;
+  background-color:var(--orange);
+}
+
 .user_btn-link{
- color: var(--black);
+  text-decoration: none;
+  color: var(--black);
+}
+
+
+.user_btn-link:hover{
+color: #fff;
+background-color:var(--orange);
+}
+
+
+
+
+.btn-login-header{
+
 }
 
 /*--------------------------------------------------------------
@@ -689,7 +731,7 @@ h6 {
 
 .sidebar-nav .nav-link:hover {
   color: #4154f1;
-  background: #f6f9ff;
+  background: var(--orange);
 }
 
 .sidebar-nav .nav-link:hover i {
@@ -735,7 +777,7 @@ h6 {
 }
 
 .sidebar-nav .nav-content a.active i {
-  background-color: #4154f1;
+  background-color: var(--orange);
 }
 
 /*--------------------------------------------------------------
@@ -1141,7 +1183,7 @@ h6 {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #5969f3;
+  background: var(--orange);
 }
 
 @-webkit-keyframes animate-loading {
@@ -1193,7 +1235,7 @@ h6 {
 }
 
 .error-404 .btn:hover {
-  background: #3e4f6f;
+  background:var(--orange);
 }
 
 @media (min-width: 992px) {
@@ -1242,4 +1284,16 @@ h6 {
   width: 200px;
   height: 222px;
 }
+
+a.user-anch-opt{
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+}
+
+a.user-anch-opt:hover{
+  color: var(--orange)
+}
+
+
 /* =======================User ends=========================== */
