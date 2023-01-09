@@ -42,6 +42,13 @@ class OrdersController < ApplicationController
 		@data=ProductInformation::OrderService.delete_order(order_id)
 	end
 
+	def download
+		# byebug
+		pdf = Prawn::Document.new
+		pdf.text "haiiii"
+		send_data(pdf.render, filename: "#{@order}.pdf", type: "application/pdf")
+	  end
+
 	private
 	
 	def order_params

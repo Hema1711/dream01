@@ -105,7 +105,9 @@ Rails.application.routes.draw do
 
 # ---------------------------Order==========================================
 get "/orders/order_confirmation", to:  "orders#order_index", as: :order_index
-  
+
+get "download", to: "orders#download"
+
 
 # ---------------------------Delivery==========================================
 get "/orders/delivery_index", to:  "orders#delivery_index", as: :delivery_index

@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
 	
     skip_before_action :verify_authenticity_token
-
-	before_action :admin, only: [:show, :update, :destroy, :edit]
+	include Secured
+	# before_action :admin, only: [:show, :update, :destroy, :edit]
 	require 'securerandom'
 
+	
+	def show
+	  # session[:userinfo] was saved earlier on Auth0Controller#callback
+	  @user = session[:userinfo]
+	end
 
 	# def create_user
 	# 	byebug
