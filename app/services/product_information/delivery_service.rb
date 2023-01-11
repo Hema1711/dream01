@@ -5,9 +5,9 @@ module ProductInformation
 			data = Delivery.all
 		end
 
-		def self.create_delivery(params_del)
+		def self.create_delivery()
 			byebug
-			@data = Delivery.new(params_del)
+			@data = Delivery.new()
 			if @data.save
 				DeliveryMailer.invoice_email.deliver
 

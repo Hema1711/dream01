@@ -44,9 +44,10 @@
     </nav>
 
    <div class="icons"> 
-        <div class="fas fa-bars" id="menu-btn"></div> 
+            <div class="fas fa-bars" id="menu-btn">
+            </div> 
         
-        <% if $session_user != "" %>
+           <!---<% if $session_user != "" %>-->
       
             <div class="search_btn">
               <%= link_to "", search_result_path, :method => :get,  class:"fas fa-search search_btn-link" %> 
@@ -57,12 +58,25 @@
             <div class="user_btn">
               <%= link_to "", user_index_path, :method => :get,  class:"fas fa-user user_btn-link" %> 
             </div> 
-            
-            <%= button_to 'Logout', '/auth/logout',class: " btn-logout-header form  user_btn-link", method: :get, data:{turbo: "false"}%>    
+              <div class="user_btn">
+              <%= link_to "", login_index_path, :method => :get,  class:"fas fa-user-circle  user_btn-link" %> 
+            </div> 
 
+            <%
+=begin%>
+ if (session[:user_name]) == "Admin"{
+
+            } 
+<%
+=end%>
+  
+            <!---<%= button_to 'Logout', '/auth/logout',class: " btn-logout-header form  user_btn-link", method: :get, data:{turbo: "false"}%>   
+
+
+            <%= button_to 'Logout', '/users/logout',class: " btn-logout-header form  user_btn-link", method: :get, data:{turbo: "false"}%>     -->  
             
 
-        <% else %>
+        <!--- <% else %>
             <div class="search_btn">
               <%= link_to "", search_result_path, :method => :get,  class:"fas fa-search search_btn-link" %> 
             </div>
@@ -70,9 +84,13 @@
              <div class="cart_btn">
               <%= link_to "", cart_index_path, :method => :get,  class:"fas fa-shopping-cart cart_btn-link header-btn" %> 
             </div> 
-            <%= button_to 'Login', '/auth/auth0',class: " btn-login-header form  user_btn-link", method: :post, data:{turbo: "false"}%> 
+           
+            <%= button_to 'Login', '/auth/auth0',class: " btn-login-header form  user_btn-link", method: :post, data:{turbo: "false"}%>  
 
-        <% end %>
+            
+            <%= button_to 'Login', '/users/user_login',class: " btn-login-header form  user_btn-link"%> 
+
+        <% end %> -->
     </div> 
  
  

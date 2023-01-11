@@ -1,15 +1,55 @@
 class UsersController < ApplicationController
 	
     skip_before_action :verify_authenticity_token
-	include Secured
+	# include Secured
 	# before_action :admin, only: [:show, :update, :destroy, :edit]
 	require 'securerandom'
 
 	
-	def show
-	  # session[:userinfo] was saved earlier on Auth0Controller#callback
-	  @user = session[:userinfo]
+	# def login 
+    #     byebug
+    #     @user = session[:userinfo]
+    #     if session[:current_user_id].present?
+    #         if session[:current_user_role]
+    #             redirect_to index_path, notice: "Admin is not logged out yet"
+    #         else
+    #             redirect_to show_path, notice: "User is not logged out yet"
+    #         end
+    #     end
+    # end
+
+	def verify_user
+		byebug
+        @user_login =  ProductInformation::UserService.user_login(params[:email_id],params[:password])
+        
+        if @user_login.nil? 
+            @user_login =  "email-id Doesn't Exists"
+            render :login, status: :unprocessable_entity
+
+        elsif @user_login == false 
+            @user_login = "Email id is exists, but Incorrect password"
+            render :login, status: :unprocessable_entity
+
+        else
+            # byebug
+            session[:current_user_id] = @user_login.id
+            session[:current_user_role] = @user_login.is_admin
+            if @user_login.is_admin
+                redirect_to index_path, notice: "Admin Login Success"
+            else
+                redirect_to show_path, notice: "User Login Success"
+            end
+            
+        end
+
+    end 
+
+	def logout
+		# byebug
+		reset_session
+		redirect_to login_index
 	end
+	
 
 	# def create_user
 	# 	byebug
@@ -84,7 +124,7 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-		params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :country, :city, :state, :file_extension, :cart_unique_id)
+		params.require(:user_details).permit(:first_name, :last_name, :email, :phone_number, :country, :city, :state, :file_extension, :cart_unique_id)
 	end
 
 end

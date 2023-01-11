@@ -35,7 +35,7 @@ module ProductInformation
             product.update(product_quantity: quantity)
         end
 
-        # =========================================================================================
+        # ===================================Wishlist======================================================
 
     
         
@@ -48,7 +48,7 @@ module ProductInformation
         def self.delete_wishlist(product_unique_id)
             # byebug
             product = Wishlist.where(is_active: true).find_by(product_unique_id: product_unique_id)
-            product..update(is_active:false)
+            product.update(is_active:false)
         end
 
         def self.add_to_wishlist(product_unique_id,quantity,email_id)
