@@ -1,0 +1,48 @@
+body
+  = form_with(url: shipments_path, method: :post) do |form|
+    .col-xl-9.col-lg-9.col-md-12.col-sm-12.col-12 style="margin-top: 122px;"
+              .card-user.h-100
+                .card-body
+                  .row.gutters
+                    .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-12
+                      h6.mb-2.text-primary
+                        | Personal Details
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                      .form-group
+                        label.lable-class[for="first_name"]  Sender_name
+                        = form.text_field :sender_name, class:"box-class", placeholder:"Enter First Name", id:"first_name", data: {"user-target" => "first_name" , action: "focusout->user#first_name_validation" }
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                      .form-group
+                        label.lable-class[for="last_name"]  recipient_name
+                        = form.text_field :recipient_name , class:"box-class", placeholder:"Enter Last Name", id:"last_name", data: {"user-target" => "last_name" , action: "focusout->user#last_name_validation" }
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                      .form-group
+                        label.lable-class[for="phone"]  recipient_address
+                        =  form.text_area :recipient_address , class:"box-class", placeholder:"Enter Phone Number", id:"phone",maxlength:"10", data: {"user-target" => "phone_number" , action: "focusout->user#phone_validation" }
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                    .form-group
+                        label.lable-class[for="email"]  package_weight
+                        = form.number_field :package_weight, class:"box-class", placeholder:"Enter Email id", id:"email", data: {"hello-target" => "email" , action: "focusout->user#email_validation" }
+                  .row.gutters
+                    .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-12
+                      h6.mt-3.mb-2.text-primary
+                        | Address
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                      .form-group
+                        label.lable-class[for="file"] package_length
+                        = form.number_field :package_length,class:"box-class dropdown-toggle"
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                      .form-group
+                        label.lable-class[for="file"]  package_width
+                        = form.number_field :package_width,  class:"box-class dropdown-toggle"
+                    .col-xl-6.col-lg-6.col-md-6.col-sm-6.col-12
+                      .form-group
+                        label.lable-class[for="file"] package_height
+                        = form.number_field :package_height , class:"box-class dropdown-toggle"
+                  .row.gutters
+                    .col-xl-12.col-lg-12.col-md-12.col-sm-12.col-12
+                      .text-right
+                        .right_align
+                            = form.button class:'btn-success' ,style:"font-size:14px;     background: black;"
+                        .right_align
+                            a.hyper href="/users/get_user" type="button" class="btn btn-dark index-anch" style="font-size: 14px;border-radius: 33px;     font-weight: bold;"  Cancel 
